@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { IsAdminComponent } from './layouts/is-admin/is-admin.component';
 import { IsGuestComponent } from './layouts/is-guest/is-guest.component';
 import { SharedModule } from './shared/shared.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
