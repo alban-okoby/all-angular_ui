@@ -10,7 +10,6 @@ import { AboutComponent } from './views/about/about.component';
 import { HomeComponent } from './views/home/home.component';
 
 
-
 @NgModule({
   declarations: [
     AdminComponent,
