@@ -7,6 +7,7 @@ import { FooterComponent } from '../shared/footer/footer.component';
 import { PortfolioComponent } from './views/portfolio/portfolio.component';
 import { EducationExperienceComponent } from './views/education-experience/education-experience.component';
 import { AboutComponent } from './views/about/about.component';
+import { HomeComponent } from './views/home/home.component';
 
 
 
@@ -16,7 +17,8 @@ import { AboutComponent } from './views/about/about.component';
     ViewsComponent,
     PortfolioComponent,
     EducationExperienceComponent,
-    AboutComponent
+    AboutComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
