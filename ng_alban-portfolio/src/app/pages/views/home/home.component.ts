@@ -27,13 +27,25 @@ export class HomeComponent {
   }
 
   /**
-   * getHome : retrieve home(description , salutation)
+   * getHome : retrieve home(description , salutation, quote)
    */
   public getHome(): void {
     this.homeService.getHome().subscribe(
       (response : Home[]) => {
         this.home = response;
-        console.log(response);
+      }
+    )
+  }
+
+  /**
+   * updateHome : function to update home component
+   * @param home : object that represent (description , salutation, quote)
+   * @param id : id of home object
+   */
+  public updateHome(home : Home, id : number) {
+    this.homeService.updateHome(home, id).subscribe(
+      (response : Home) => {
+        this.getHome();
       }
     )
   }

@@ -8,6 +8,9 @@ import { IsAdminComponent } from './layouts/is-admin/is-admin.component';
 import { IsGuestComponent } from './layouts/is-guest/is-guest.component';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
+import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,11 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    PagesModule
+    PagesModule,
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot({ name: 'dark' }),
+    NbLayoutModule,
+    NbEvaIconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
