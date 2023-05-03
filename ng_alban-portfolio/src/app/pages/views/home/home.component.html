@@ -1,14 +1,15 @@
 <section class="home" id="home">
-  <h3>Hello world !</h3>
+  <h3 *ngFor="let v of home">{{ v.salutation }} </h3>
   <h1>Je suis
       <span>Alban Okoby</span>
-      <i *ngIf="[users.isAdmin && users.role == 'admin']" class="fa fa-pencil" style="margin-left: 12px"></i>
+      <i class="fa fa-pencil" style="margin-left: 12px"></i>
   </h1>
-  <p>Passionné de nouvelles approches scientifiques et numériques. J'ai <strong id="xp-number">2</strong> années d'expériences dans l'enseignement général ainsi que dans le développement IT. Indépendant et auto-didacte, <br> je suis de base diplômé de science informatique et numérique. J'adore la CRAC (Créativité, Réactivité, Adaptabilité et Curiosité) en équipe ou en solo.<br> Si ce n'est que magnifique que dire d'autre ?
+  <p *ngFor="let v of home">
+    {{ v.description }}
   </p>
   <p>
-      <cite>
-          " Partager un savoir, un savoir-faire, du savoir-être, encore une ligne de code pour un monde de plus en plus meilleur <code> <\></code> ".
+      <cite *ngFor="let v of home">
+           <code>" {{ v.quote }} <\></code>"
       </cite>
   </p>
           <a href="#apropos"><button class="btn">A propos ? <i class="fas fa-user"></i></button></a>
