@@ -8,9 +8,12 @@ import { IsAdminComponent } from './layouts/is-admin/is-admin.component';
 import { IsGuestComponent } from './layouts/is-guest/is-guest.component';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
-import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+
+// Nebular plugin
+import { NbThemeModule, NbLayoutModule, NbDialogModule } from '@nebular/theme';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     BrowserAnimationsModule,
     NbThemeModule.forRoot({ name: 'dark' }),
     NbLayoutModule,
-    NbEvaIconsModule
+    NbEvaIconsModule,
+    NbDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
