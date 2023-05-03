@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  isAdmin = false;
+
+  users: any = {
+    role : "admin",
+    isAdmin: true
+  }
 }
