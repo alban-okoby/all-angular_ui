@@ -7,9 +7,6 @@
  */
 
 
-
-
-
 /*-----------------------------------*\
  * #CUSTOM PROPERTY
 \*-----------------------------------*/
@@ -24,12 +21,14 @@
   --rich-black-fogra-29: hsl(217, 28%, 9%);
   --gray-x-11-gray: hsl(0, 0%, 74%);
   --oxford-blue_60: hsla(230, 41%, 14%, 0.6);
-  --bittersweet: hsl(5, 100%, 69%);
+  --bittersweet: hsla(334, 89%, 43%, 0.782);
+  /* --bittersweet: hsl(5, 100%, 69%); */
   --smoky-black: rgb(7, 6, 1);
   --gainsboro: hsl(0, 0%, 88%);
   --black_90: hsla(0, 0%, 0%, 0.9);
   --cultured: hsl(200, 12%, 95%);
-  --salmon: hsl(5, 100%, 73%);
+  /* --salmon: hsl(5, 100%, 73%); */
+  --salmon: hsl(0, 5%, 30%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
   --onyx: hsl(0, 0%, 27%);
@@ -179,6 +178,8 @@ body {
   gap: 5px;
   padding: 14px 25px;
   border: 1px solid var(--border-color, var(--bittersweet));
+  transition: 203ms ease-in;
+  border-radius: 50px;
 }
 
 .btn-primary:is(:hover, :focus) {
