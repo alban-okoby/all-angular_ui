@@ -32,6 +32,7 @@
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
   --onyx: hsl(0, 0%, 27%);
+  --info: #e80f7c;
 
   /**
    * typography
@@ -194,6 +195,14 @@ body {
 }
 
 .btn-secondary:is(:hover, :focus) { --background: hsla(0, 0%, 0%, 0.1); }
+
+.btn-info {
+  --background: var(--black);
+  --border-color: var(--info);
+  --color: var(--white);
+}
+.btn-info:is(:hover, :focus) { --background: var(--primary); }
+
 
 .has-scrollbar {
   display: flex;
