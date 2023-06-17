@@ -24,8 +24,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "./node_modules/@nebular/theme/styles/prebuilt/dark.css",
+            "styles": [             
               "src/styles.css"
             ],
             "scripts": [

@@ -15,12 +15,11 @@ export class HomeService {
   constructor(private http: HttpClient) { }
 
   public getHome(): Observable<any[]> {
-    const result = this.http.get<Home[]>(this.apiServeUrl);
-    return result;
+    return this.http.get<Home[]>(this.apiServeUrl);
   }
 
-  public updateHome(home : Home ,id : number) {
-    const result = this.http.put<Home>(`${this.apiServeUrl}/${id}`, home, {headers : environment.headers});
+  public updateHome(home : Home) {
+    const result = this.http.put<Home>(this.apiServeUrl + "/" + home.id, home, {headers : environment.headers});
     return result;
   }
 }

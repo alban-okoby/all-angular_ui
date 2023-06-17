@@ -50,7 +50,7 @@ body.dark{
 }
 body.dark #toggle-btn{
     color: #fff;
-    background: linear-gradient(#111, #111, #f9ca24);
+    background: linear-gradient(var(--black), var(--black), var(--selection));
 
 }
  body.dark .btn{
@@ -112,17 +112,20 @@ header .navbar{
 }
 header .navbar ul{
     list-style: none;
-    padding: 1rem 3rem;
+    padding: 1rem 3rem!important;
+}
+header .navbar ul li{
+  width: 100%;
 }
 header .navbar ul a{
     color:var(--white);
     background: var(--gray);
-    display: block;
+    display: block!important;
     font-size: 1.9rem;
     border-radius: 5rem;
     text-decoration: none;
-    padding: .8rem;
-    margin: 1.5rem 0;
+    padding: .8rem!important;
+    margin: 1.5rem 0!important;
     font-family: 'Dancing Script', cur;
 
 }
@@ -197,7 +200,7 @@ section{
  span{
     color: var(--yellow);
 }
-.btn{
+.btnz{
     background-color: var(--gray-2);
     color: var(--white);
     padding: .6rem 1.1rem;
@@ -207,17 +210,29 @@ section{
     margin-top: 2rem;
     font-size: 2rem;
 }
-.btn:hover{
+.btnz:hover{
     background-color: var(--yellow);
     color: var(--black);
     border: solid 1px var(--white);
 }
-.home .btn i{
+.home .btnz i{
     font-size: 1.8rem;
     padding: 0 .6rem;
     color: var(--white);
 }
-.home .btn:hover i{
+.modal-dialog{
+  color: black!important;
+}
+.modal-header {
+  box-shadow: 0 0 .1rem 0 rgb(101, 100, 100);
+  font-size: 17px!important;
+}
+.modal-body,
+.modal-body p {
+  /* font-size: 11px!important; */
+  color: black!important;
+}
+.home .btnz:hover i{
     color: var(--gray);
     transition: all .1s linear;
 }
@@ -595,7 +610,8 @@ footer h5 {
 
 @media screen and (max-width: 360px) {
     header{
-        height: 100%; ;
+        height: 100%;
+        width: 45%;
     }
     .heading{
         margin: 0 .3rem;

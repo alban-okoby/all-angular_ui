@@ -8,6 +8,7 @@ import { PortfolioComponent } from './views/portfolio/portfolio.component';
 import { EducationExperienceComponent } from './views/education-experience/education-experience.component';
 import { AboutComponent } from './views/about/about.component';
 import { HomeComponent } from './views/home/home.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,8 +22,14 @@ import { HomeComponent } from './views/home/home.component';
   ],
   imports: [
     CommonModule,
-    SharedModule
-
+    SharedModule,
+    FormsModule
+  ],
+  exports: [
+    AboutComponent,
+    HomeComponent,
+    PortfolioComponent,
+    EducationExperienceComponent
   ]
 })
 export class PagesModule { }

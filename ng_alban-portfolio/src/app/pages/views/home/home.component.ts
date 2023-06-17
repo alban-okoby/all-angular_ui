@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Home } from 'src/app/core/models/home';
 import { HomeService } from 'src/app/core/services/home.service';
+import { AboutComponent } from '../about/about.component';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -19,11 +21,27 @@ export class HomeComponent {
   // }
 
   home!: Home[];
+  oneHome!: Home;
+  homeForm!: FormGroup;
 
-  constructor(private router: Router, private homeService: HomeService) {}
-
+  constructor(private router: Router, private homeService: HomeService, private formBuilder: FormBuilder) { }
   ngOnInit(): void {
+    this.homeForm = this.formBuilder.group({
+      salutation: [this.oneHome.salutation, [Validators.required]],
+      description: [this.oneHome.description, [Validators.required]],
+      quote: [this.oneHome.quote, [Validators.required]]
+    });
     this.getHome();
+  }
+
+  get salutation() {
+    return this.homeForm.get('salutation') as FormControl;
+  }
+  get description() {
+    return this.homeForm.get('description') as FormControl;
+  }
+  get quote() {
+    return this.homeForm.get('quote') as FormControl;
   }
 
   /**
@@ -31,7 +49,7 @@ export class HomeComponent {
    */
   public getHome(): void {
     this.homeService.getHome().subscribe(
-      (response : Home[]) => {
+      (response : any) => {
         this.home = response;
       }
     )
@@ -42,8 +60,8 @@ export class HomeComponent {
    * @param home : object that represent (description , salutation, quote)
    * @param id : id of home object
    */
-  public updateHome(home : Home, id : number) {
-    this.homeService.updateHome(home, id).subscribe(
+  public updateHome(oneHome : Home) {
+    this.homeService.updateHome(this.oneHome).subscribe(
       (response : Home) => {
         this.getHome();
       }
