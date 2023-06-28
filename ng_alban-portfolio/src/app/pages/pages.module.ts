@@ -9,6 +9,11 @@ import { EducationExperienceComponent } from './views/education-experience/educa
 import { AboutComponent } from './views/about/about.component';
 import { HomeComponent } from './views/home/home.component';
 import { FormsModule } from '@angular/forms';
+import { AddhomeComponent } from './views/home/addhome/addhome.component';
+
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -18,18 +23,23 @@ import { FormsModule } from '@angular/forms';
     PortfolioComponent,
     EducationExperienceComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    AddhomeComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule, MatFormFieldModule, MatTooltipModule
   ],
   exports: [
+    AdminComponent,
+    ViewsComponent,
+    PortfolioComponent,
+    EducationExperienceComponent,
     AboutComponent,
     HomeComponent,
-    PortfolioComponent,
-    EducationExperienceComponent
+    AddhomeComponent
   ]
 })
 export class PagesModule { }

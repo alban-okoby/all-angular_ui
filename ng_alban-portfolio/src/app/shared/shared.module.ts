@@ -4,7 +4,11 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
-
+// Material Modules
+import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,11 +17,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NotFoundComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,  FormsModule, MatDialogModule, MatFormFieldModule, MatTooltipModule
   ],
   exports: [
     FooterComponent,
-    SidebarComponent
+        SidebarComponent,
+        NotFoundComponent
+  ],
+  providers: [
+    { provide:  MAT_DIALOG_DATA, useValue : {}},
   ]
 })
 export class SharedModule { }

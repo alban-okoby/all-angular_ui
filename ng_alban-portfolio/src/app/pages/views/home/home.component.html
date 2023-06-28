@@ -1,52 +1,65 @@
-<section class="home" id="home">
-  <h3 *ngFor="let v of home">{{ v?.salutation }} </h3>
-  <h1>Je suis
+<section class="home" id="home" *ngFor="let v of home">
+  <h3>{{ v.salutation }}</h3>
+  <h1>
+    Je suis
     <span>Alban Okoby</span>
-    <i class="fa fa-pencil" style="margin-left: 12px" data-bs-toggle="modal" data-bs-target="#exampleModal"
-    data-bs-whatever="@mdo"></i>
+    <i
+      class="fa fa-pencil"
+      style="margin-left: 12px"
+     (click)="openEditHomeForm(v)"
+    ></i>
   </h1>
-  <p *ngFor="let v of home">
+  <p>
     {{ v.description }}
   </p>
   <p>
-    <cite *ngFor="let v of home">
-      " {{ v.quote }}
-      <code><\></code>"
-    </cite>
+    <cite> " {{ v.quote }} <code><\></code>" </cite>
   </p>
-  <a href="#apropos"><button class="btnz">A propos ? <i class="fas fa-user"></i></button></a>
+  <a href="#apropos"
+    ><button class="btnz">A propos ? <i class="fas fa-user"></i></button
+  ></a>
 </section>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content" *ngFor="let v of home">
-      <form #editForm="ngForm">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modifier ma présentation </h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" >
-          <div class="mb-3" >
-            <label for="recipient-name" class="col-form-label">Salutation</label>
-            <input type="text" class="form-control" id="recipient-name" ngModel="v.salutation" name="salutation" value="{{ v.salutation }}">
+
+<!-- Button trigger modal -->
+<button type="button" class="btnz btn-primary" data-bs-toggle="modal" data-bs-target="#homeModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="homeModal" tabindex="-1" aria-labelledby="homeModalLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="homeModalLabel" style="font-size: 100%!important;">Présentez vous à l'occasion  </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pe-4">
+        <form #homeForm="ngForm">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Salutation<i class="required">*</i> </label>
+            <input type="text" class="form-control" id="recipient-name" 
+            formControlName="salutation"
           </div>
           <div class="mb-3">
-            <label for="message-text" class="col-form-label">Présentation</label>
-            <textarea class="form-control" id="message-text" ngModel="v.description" name="description" value="{{ v.description }}" ></textarea>
+            <label for="recipient-name" class="col-form-label">Votre citation </label>
+            <input type="text" class="form-control" id="recipient-name" 
+            [value]="oneHome.quote">
+            <!-- formControlName="quote" -->
           </div>
           <div class="mb-3">
-            <label for="citation" class="col-form-label">Citation</label>
-            <input type="text" rows="3" class="form-control" id="citation" ngModel="editForm.quote" name="quote" value="{{ v.quote }}">
+            <label for="message-text" class="col-form-label">Description<i class="required">*</i></label>
+            <textarea class="form-control" id="message-text" rows="8" 
+            [value]="oneHome.description" required></textarea>
+            <!-- formControlName="description" -->
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" (click)="updateHome(editForm.value)" data-bs-dismiss="modal">Enregistrer
-            <i class="fa-solid fa-check"></i>
-            <i class="fa-solid fa-badge-check"></i> </button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler <i
-              class="fa-solid fa-xmark"></i> </button>
-        </div>
-      </form>
+        </form>
+        l
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success">Enregistrer</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
     </div>
   </div>
 </div>

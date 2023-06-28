@@ -9,10 +9,11 @@ import { IsGuestComponent } from './layouts/is-guest/is-guest.component';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 
-// Nebular plugin
-import { NbThemeModule, NbLayoutModule, NbDialogModule } from '@nebular/theme';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
+// Nebular plugin
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -29,10 +30,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     HttpClientModule,
     PagesModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'dark' }),
-    NbLayoutModule,
-    NbEvaIconsModule,
-    NbDialogModule
+    MatDialogModule, MatFormFieldModule, MatTooltipModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

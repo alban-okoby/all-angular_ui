@@ -7,6 +7,7 @@
     --black-2 : #222;
     --selection: #f9ca24;
     --yellow: #ffca24;
+    --yellow2: #c2a318;
     --gray: #333;
     --gray-2: #444;
 }
@@ -72,6 +73,10 @@ body.dark .portfolio .box-container .box p{
 body.dark .scroll_top i {
     background: var(--white);
     color: var(--yellow);
+}
+
+.required {
+  color: red!important;
 }
 /* STYLE DU HEADER */
 header{
@@ -220,18 +225,33 @@ section{
     padding: 0 .6rem;
     color: var(--white);
 }
+/* Modal dialog */
+.modal * {
+  font-size: medium;
+}
+.modal .col-form-label {
+  /* font-weight: 500; */
+  color: var(--yellow2);
+}
+.modal .btn {
+  font-size: large;
+}
 .modal-dialog{
   color: black!important;
 }
 .modal-header {
   box-shadow: 0 0 .1rem 0 rgb(101, 100, 100);
-  font-size: 17px!important;
+  font-size: 20px!important;
+  text-align: center!important;
 }
 .modal-body,
 .modal-body p {
   /* font-size: 11px!important; */
   color: black!important;
+  font-size: large;
 }
+/* End modal dialog */
+
 .home .btnz:hover i{
     color: var(--gray);
     transition: all .1s linear;
