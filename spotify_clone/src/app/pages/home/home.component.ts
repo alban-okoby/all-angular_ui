@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { LayoutModule } from '../../layout/layout.module';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, LayoutModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
