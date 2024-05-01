@@ -114,7 +114,6 @@ a {
   border-radius: 0.5rem;
   margin: 0 0.5rem 1.4rem 0.5rem;
   padding: 0.1rem 1.3rem 1.2rem 1.3rem;
-
 }
 
 .box-p1 {
@@ -214,7 +213,6 @@ a {
   align-items: center;
   justify-content: center;
   margin-top: 0.6rem;
-
 }
 
 .user img {
@@ -292,6 +290,10 @@ a {
   background-size: cover;
 }
 
+.image-circle {
+  border-radius: 50%;
+}
+
 .card-title {
   font-weight: 600;
   margin: 0.3rem 0 0 0;
@@ -367,7 +369,6 @@ a {
 .time {
   transition: all 0.2s;
 }
-
 
 .player {
   width: 40%;
@@ -539,195 +540,224 @@ a {
   justify-content: center;
 }
 
-@media(max-width: 1024px) {
+.preview {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, #ae2896, #509bf5);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.preview h6 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.preview p {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+}
+.preview button {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 14px 30px;
+  border: 0px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
   .hide {
-      display: none;
+    display: none;
   }
 
   .side-bar {
-      width: 90px;
+    width: 90px;
   }
 
   .option {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .option .icons .fa-plus {
-      margin: 1rem;
+    margin: 1rem;
   }
 
   .cards-container {
-      overflow-x: auto;
-      flex-wrap: nowrap;
+    overflow-x: auto;
+    flex-wrap: nowrap;
   }
 
   .cards-container::-webkit-scrollbar {
-      height: 0.4rem;
+    height: 0.4rem;
   }
 
   .cards-container::-webkit-scrollbar-thumb {
-      background-color: #1a1a1a;
+    background-color: #1a1a1a;
   }
 
   .card {
-      min-width: 162px;
+    min-width: 162px;
   }
 }
 
 @media screen and (max-width: 768px) {
-
   .hide2 {
-      display: none;
+    display: none;
   }
 
   .card {
-      width: 80%;
-      max-width: 262px;
-      margin: 0 auto 10px;
+    width: 80%;
+    max-width: 262px;
+    margin: 0 auto 10px;
   }
 
   .center {
-      text-align: center;
+    text-align: center;
   }
 
   .card-heading {
-      font-size: 1.5em;
+    font-size: 1.5em;
   }
 
   .card .card-title,
   .card-info {
-      font-size: 0.9em;
+    font-size: 0.9em;
   }
 
   .right-part .badge2 {
-      font-size: 0.6rem;
-      padding: 0.7rem;
+    font-size: 0.6rem;
+    padding: 0.7rem;
   }
 
   .right-part i {
-      font-size: 0.8rem;
+    font-size: 0.8rem;
   }
 
   .footer {
-      text-align: center;
-      font-size: 0.8em;
+    text-align: center;
+    font-size: 0.8em;
   }
 
   .main-content {
-      margin-left: 0.5rem;
-      margin-top: 0;
+    margin-left: 0.5rem;
+    margin-top: 0;
   }
 
   ::-webkit-scrollbar {
-      width: 0.2rem;
+    width: 0.2rem;
   }
 
   ::-webkit-scrollbar-thumb {
-      background-color: #333;
+    background-color: #333;
   }
 
   .sticky-nav-pro {
-      position: sticky;
-      top: 0;
-      padding-top: 0;
+    position: sticky;
+    top: 0;
+    padding-top: 0;
   }
 
   .sticky-nav {
-      padding: 10px 0;
-      font-size: 0.9em;
+    padding: 10px 0;
+    font-size: 0.9em;
   }
 
   .sticky-nav-boottom {
-      margin-top: -10px;
+    margin-top: -10px;
   }
 
   .sticky-nav-boottom .badge3 {
-      font-size: 0.7rem;
-      padding: 0.7rem;
+    font-size: 0.7rem;
+    padding: 0.7rem;
   }
 
   .sticky-nav-boottom .all {
-      background-color: #fff;
-      color: black;
+    background-color: #fff;
+    color: black;
   }
 
   .cards-container::-webkit-scrollbar {
-      height: 2px;
+    height: 2px;
   }
 
   .cards-container::-webkit-scrollbar-thumb {
-      background-color: #333;
+    background-color: #333;
   }
 
   .footer .hr {
-      width: 100%;
+    width: 100%;
   }
 
   .visible {
-      display: inline-block;
+    display: inline-block;
   }
 
   .music-player {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .music-player .album {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      width: 100%;
-      margin-top: 0.6rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.6rem;
   }
 
   .music-player .album {
-      margin-right: 1rem;
+    margin-right: 1rem;
   }
 
   .music-player .player {
-      width: 100%;
-      margin-top: -205px;
+    width: 100%;
+    margin-top: -205px;
   }
 
   .progress-bar .play-bar {
-      height: 0.1rem;
+    height: 0.1rem;
   }
 
   .album .album-img {
-      width: 2.5rem;
-      height: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .album .description p {
-      font-size: 0.7rem;
+    font-size: 0.7rem;
   }
 
   .album .description1 {
-      width: fit-content;
-      white-space: nowrap;
+    width: fit-content;
+    white-space: nowrap;
   }
 
   .left-part .hero {
-      margin-top: 0.5rem;
-      margin-left: 0.5rem;
-      height: 2rem;
-      width: 2rem;
-      background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      padding: 0.2rem;
-
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    height: 2rem;
+    width: 2rem;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0.2rem;
   }
 
-
   .left-part .hero i {
-      font-size: 1.2rem;
+    font-size: 1.2rem;
   }
 
   .pause2 {
-      display: block;
-      margin-left: 6rem;
+    display: block;
+    margin-left: 6rem;
   }
-
 }
