@@ -1,0 +1,35 @@
+.search_bar {
+  width:300px;
+  height: 40px;
+  // border: 1px solid #ccc;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  background:var(--input-black);
+}
+
+.search_bar input {
+  flex: 1;
+  height: 88%;
+  border: none;
+  outline: none;
+  background:var(--input-black);
+  margin-left: 10px;
+  font-size: 16px;
+}
+.search_bar input:focus {
+  color: #ccc;
+}
+
+.search_bar input::placeholder {
+  color: var(--input-black-text);
+}
+
+.search_bar button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  color:var(--input-black-text)
+}
