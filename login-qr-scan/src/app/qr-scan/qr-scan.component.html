@@ -1,0 +1,7 @@
+<div>
+  <h2>Scannez ce QR Code avec votre application mobile</h2>
+  <img [src]="qrCodeUrl" alt="QR Code">
+</div>
+
+<ngx-scanner-qrcode (scanSuccess)="onScanSuccess($event)" [vibrate]="200">
+</ngx-scanner-qrcode>
