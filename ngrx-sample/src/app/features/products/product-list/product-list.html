@@ -1,0 +1,10 @@
+<h2>Produits ({{ count$ | async }})</h2>
+
+<ul>
+    @for (product of products$ | async; track product.id) {
+        <li>
+            <strong>{{ product.name }}</strong> -
+            {{ product.price }} XOF
+        </li>
+    }
+</ul>
