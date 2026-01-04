@@ -35,6 +35,13 @@ This project is sample of usage of ngRx with angular framework
 
 To start a local development server, run:
 
+```
+npx run json-server ./api/db.json 
+```
+To start json api for simulation
+
+after that run :
+
 ```bash
 npm i && npm run start
 ```

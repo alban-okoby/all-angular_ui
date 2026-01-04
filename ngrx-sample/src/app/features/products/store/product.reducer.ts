@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { initialProductState } from "./product.state";
+import { productAdapter, initialProductState } from "./product.state";
 import * as ProductActions from "./product.action";
 
 
@@ -14,15 +14,22 @@ export const productReducer = createReducer(
         error: null
     })),
 
-    on(ProductActions.loadProductSuccess, (state, { products }) => ({
-        ...state,
-        products,
-        loading: false,
-    })),
-    
+    on(ProductActions.loadProductSuccess, (state, { products }) =>
+        productAdapter.setAll(products, {
+            ...state,
+            loading: false,
+        })),
+
     on(ProductActions.loadProductFailure, (state, { error }) => ({
         ...state,
         loading: false,
         error
-    })) 
+    })),
+
+    on(ProductActions.updateProduct, (state, { product }) =>
+        productAdapter.updateOne(
+            { id: product.id, changes: product },
+            state
+        )
+    )
 );

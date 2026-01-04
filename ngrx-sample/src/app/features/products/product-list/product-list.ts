@@ -20,12 +20,15 @@ export class ProductList implements OnInit {
   error$ = this.store.select(ProductSelectors.selectError);
 
   count$: Observable<number> =
-    this.store.select(ProductSelectors.selectProductCount);
+    this.store.select(ProductSelectors.selectProductTotal);
 
   ngOnInit(): void {
     this.loadAllProducts();
   }
 
+  /**
+   * Load all products
+   */
   loadAllProducts() {
     this.store.dispatch(ProductActions.loadProducts());
   }
