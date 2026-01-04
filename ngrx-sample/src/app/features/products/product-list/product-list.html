@@ -1,10 +1,17 @@
 <h2>Produits ({{ count$ | async }})</h2>
 
+@if (loading$ | async) {
+  <p>Chargement...</p>
+}
+@if (error$ | async; as error) {
+  <p>{{ error }}</p>
+}
+
 <ul>
-    @for (product of products$ | async; track product.id) {
-        <li>
-            <strong>{{ product.name }}</strong> -
-            {{ product.price }} XOF
-        </li>
-    }
+  @for (product of products$ | async; track product.id) {
+    <li>
+      <strong>{{ product.name }}</strong> -
+      {{ product.price }} XOF
+    </li>
+  }
 </ul>
